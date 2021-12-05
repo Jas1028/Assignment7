@@ -26,7 +26,7 @@ def CreatePassword():
     return Password
 password = CreatePassword()
 
-# Count Varaible
+# Count Variable
 ValueCalc = 0
 LetterByLetterCount = 0
 
@@ -38,15 +38,15 @@ for character in password:
         ValueCalc = False
 
 # The program will display if the password is valid or invalid
-if LetterByLetterCount >= 15:
+if LetterByLetterCount > 15:
     if any(character in SpecialCharacters for character in password):
         if any(character in CapitalLetters for character in password): 
             if any (Numbers for character in password):
                  print("Your password is valid. ")
-if LetterByLetterCount < 15 or not any(character in SpecialCharacters for character in password) or not any(character in CapitalLetters for character in password) or not any(Numbers for character in password):
+if LetterByLetterCount <= 15 or not any(character in SpecialCharacters for character in password) or not any(character in CapitalLetters for character in password) or not any(Numbers for character in password):
                  print("Invalid Password")
-if LetterByLetterCount < 15:
-    AddNumber = int(15 - len(password))
+if LetterByLetterCount <= 15:
+    AddNumber = int(16 - len(password))
     print(f"You need to add {AddNumber} or more characters.")
 if not any(character in SpecialCharacters for character in password):
     print("You didn't put any special character in your password, you should put atleast one. ")
